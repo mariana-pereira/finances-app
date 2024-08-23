@@ -1,30 +1,21 @@
 import { Link } from "expo-router";
-import {
-  StatusBar,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function Auth() {
+export default function Register() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={"light-content"} />
       <Text style={styles.title}>finances</Text>
-      <Text style={styles.text}>
-        Ainda não tem uma conta? <Link href={"/register"}>Cadastre-se</Link>{" "}
-      </Text>
       <View style={styles.content}>
+      <TextInput style={styles.input} placeholder="Nome" />
         <TextInput style={styles.input} placeholder="E-mail" />
         <TextInput style={styles.input} placeholder="Senha" />
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Entrar</Text>
+          <Text style={styles.buttonText}>Salvar</Text>
         </TouchableOpacity>
-        <Text style={styles.text}>Esqueci minha senha</Text>
+        <Text style={styles.text}>Já tem uma conta? <Link href={"/"}>Logar</Link> </Text>
       </View>
     </SafeAreaView>
   );
@@ -37,7 +28,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  content: {},
+  content: {
+    
+  },
   title: {
     color: "#fff",
     fontSize: 50,
@@ -48,7 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: "center",
     marginBottom: 10,
-    marginTop: 10,
+    marginTop: 10
   },
   input: {
     height: 40,
@@ -57,7 +50,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     borderRadius: 5,
-    paddingHorizontal: 10,
+    paddingHorizontal: 10
   },
   button: {
     backgroundColor: "#333",
@@ -72,6 +65,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontWeight: "bold",
-    fontSize: 17,
+    fontSize: 17
   },
 });
